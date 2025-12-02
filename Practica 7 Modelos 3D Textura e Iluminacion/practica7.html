@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <title>Visor OBJ/MTL Mejorado - Iluminación y Texturas</title>
+  <title>Practica 7 - Iluminación y Texturas</title>
   <meta http-equiv="content-type" content="text/html;charset=utf-8">
   
   <style>
@@ -255,27 +255,27 @@
 
   <div id="content">
     <div id="opciones">
-      <h2>🎮 Panel de Control 3D</h2>
+      <h2>Panel de Control 3D</h2>
       
-      <div class="section-title">🖼️ Carga y Selección de Modelo</div>
+      <div class="section-title">Carga y Selección de Modelo</div>
       <fieldset>
         <legend><h3>Modelo Activo</h3></legend>
         <div class="button-group">
-          <button id="cargarFallGuys" class="activo">🎭 Fall Guys</button>
-          <button id="cargarCastle">🏰 Castle</button>
-          <button id="cargarKnight">⚔️ Knight</button>
+          <button id="cargarFallGuys" class="activo">Fall Guys</button>
+          <button id="cargarCastle">Castle</button>
+          <button id="cargarKnight">Knight</button>
         </div>
       </fieldset>
 
-      <div class="section-title">👁️ Modos de Visualización</div>
+      <div class="section-title">Modos de Visualización</div>
       <fieldset>
         <legend><h3>Configuración Visual</h3></legend>
         
         <div class="modo-group">
-          <button id="modoPuntos">🔴 Puntos</button>
-          <button id="modoLineas">📏 Líneas</button>
-          <button id="modoMaterial">🎨 Material</button>
-          <button id="modoTextura" class="activo">🖼️ Textura</button>
+          <button id="modoPuntos">Puntos</button>
+          <button id="modoLineas">Líneas</button>
+          <button id="modoMaterial">Material</button>
+          <button id="modoTextura" class="activo">Textura</button>
         </div>
 
         <div class="toggle-switch">
@@ -287,7 +287,7 @@
         </div>
       </fieldset>
 
-      <div class="section-title">🎯 Controles de Cámara</div>
+      <div class="section-title">Controles de Cámara</div>
       <fieldset>
         <legend><h3>Cámara</h3></legend>
         <div class="button-group">
@@ -301,8 +301,8 @@
       <fieldset>
         <legend><h3>Zoom</h3></legend>
         <div class="button-group">
-          <button id="zoomIn">🔍 + Acercar</button>
-          <button id="zoomOut">👁️ - Alejar</button>
+          <button id="zoomIn">+ Acercar</button>
+          <button id="zoomOut">- Alejar</button>
         </div>
       </fieldset>
 
@@ -316,12 +316,12 @@
         </div>
       </fieldset>
 
-      <button id="reset">🔄 Reiniciar Todo</button>
+      <button id="reset">Reiniciar Todo</button>
     </div>
 
     <div id="canvas-holder">
       <canvas id="webglcanvas"></canvas>
-      <div id="loading">⏳ Cargando modelo 3D...</div>
+      <div id="loading">Cargando modelo 3D...</div>
     </div>
   </div>
 
@@ -1614,7 +1614,7 @@
 
       const loader = new OBJLoader();
       
-      // 🚩 MODIFICACIÓN DE RUTAS PARA USAR CARPETAS INDIVIDUALES
+      // MODIFICACIÓN DE RUTAS PARA USAR CARPETAS INDIVIDUALES
       const modelosConfig = [
         { 
           obj: 'modelos/fall_guys/chai_hi-fi_rush_-_fall_guys_skin.obj', 
@@ -1658,9 +1658,9 @@
             const modelo = new ModeloOBJ(gl, geometria, config.posicion, config.escala, i, config.basePath);
             modelos.push(modelo);
             cargados++;
-            console.log(`✅ Modelo ${i + 1} cargado correctamente`);
+            console.log(`Modelo ${i + 1} cargado correctamente`);
           } catch (error) {
-            console.error(`❌ Error al cargar modelo ${i + 1}:`, error);
+            console.error(`Error al cargar modelo ${i + 1}:`, error);
           }
         }
         
@@ -1669,24 +1669,24 @@
             cargarModelo(0); // Cargar y mostrar el primer modelo por defecto
 
             if (loadingEl) {
-              loadingEl.innerHTML = '✅ ¡Modelos cargados!<br>🎮 Usa los botones de carga para cambiar de modelo';
+              loadingEl.innerHTML = '¡Modelos cargados!<br>🎮 Usa los botones de carga para cambiar de modelo';
               setTimeout(() => { loadingEl.style.display = 'none'; }, 2000);
             }
         } else {
             // Manejo de errores de carga (Ruta de error actualizada)
             if (loadingEl) {
               loadingEl.innerHTML = 
-                '❌ No se pudieron cargar los modelos<br><br>' +
+                'No se pudieron cargar los modelos<br><br>' +
                 'Verifica:<br>' +
-                '1. 📁 Que los archivos .obj, .mtl y .png estén en subcarpetas dentro de "modelos/" (ej: "modelos/fall_guys/")<br>' +
-                '2. 🔤 Que los nombres coincidan con los especificados en el código<br>' +
-                '3. 🌐 Que estés usando un servidor local (no file://)';
+                '1. Que los archivos .obj, .mtl y .png estén en subcarpetas dentro de "modelos/" (ej: "modelos/fall_guys/")<br>' +
+                '2. Que los nombres coincidan con los especificados en el código<br>' +
+                '3. Que estés usando un servidor local (no file://)';
             }
         }
       } catch (error) {
         console.error('Error general:', error);
         if (loadingEl) {
-          loadingEl.textContent = '❌ Error: ' + error.message;
+          loadingEl.textContent = 'Error: ' + error.message;
         }
       }
 
