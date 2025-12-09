@@ -172,10 +172,6 @@ class Piramide {
       -1, -1, -1
     ];
 
-    /* UV: reutilizamos la textura del cubo (mismo atlas)
-       Puedes ajustar luego para cada cara si quieres exactitud
-    */
-
     let uv = [
       // Cara frontal
       0.5,0.75,  0.5,0.5,  0.75,0.5,
@@ -292,7 +288,7 @@ function main(){
   requestAnimationFrame(dibuja);
 }
 
-main();
+window.onload = main;
 </script>
 </body>
 </html>
