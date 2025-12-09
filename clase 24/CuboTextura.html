@@ -140,14 +140,6 @@ function perspective(r,fovy,aspect,near,far){
 /* -------------------------------------------------------- */
 class Piramide {
   constructor(gl){
-
-    /* 5 puntos:
-       Punta: (0, 1, 0)
-       Base cuadrada:
-       (-1, -1, 1), (1, -1, 1),
-       (1, -1, -1), (-1, -1, -1)
-    */
-
     let vertices = [
       // Cara frontal
        0, 1, 0,
@@ -178,10 +170,6 @@ class Piramide {
        1, -1, -1,
       -1, -1, -1
     ];
-
-    /* UV: reutilizamos la textura del cubo (mismo atlas)
-       Puedes ajustar luego para cada cara si quieres exactitud
-    */
 
     let uv = [
       // Cara frontal
@@ -303,3 +291,4 @@ main();
 </script>
 </body>
 </html>
+
